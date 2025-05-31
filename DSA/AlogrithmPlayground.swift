@@ -26,24 +26,25 @@ import Foundation
 struct AlogrithmPlayground {
     static func run() {
         // Test algorithm
-        let firstArray: [Int] = [1, 2, 3, 4, 5]
-        let secondArray: [Int] = [10, 20, 30, 40, 50]
-        let twoSum = TwoSum(left: firstArray, right: secondArray)
-        let result = twoSum.sumOfTwoIndex(startIndex: 0, endIndex: 0)
+        let nums = [2,7,11,15]
+        let twoSum = TwoSum(nums: nums)
+        let result = twoSum.sumOfTwoIndex(target: 9)
         print("Result: \(result)")
     }
 }
 
 struct TwoSum {
-    let left: [Int]
-    let right: [Int]
+    let nums: [Int]
     
-    init(left: [Int], right: [Int]) {
-        self.left = left
-        self.right = right
-    }
-    
-    func sumOfTwoIndex(startIndex:Int, endIndex: Int) -> [Int] {
+    func sumOfTwoIndex(target:Int) -> [Int] {
+        var lastNumber:Int = 0
+        
+        for (index, number) in nums.enumerated() {
+            if lastNumber + number == target {
+                return [nums.firstIndex(of: lastNumber)!, index]
+            }
+            lastNumber = number
+        }
         return []
     }
 }
