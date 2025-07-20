@@ -1,44 +1,33 @@
 # swift-dsa
-📌 **Important**:
-- GitHub supports this **only in Markdown** (e.g. `README.md`, issue descriptions).
-- It **doesn't render Mermaid** in raw `.mermaid` files or inside code repositories directly unless inside `.md`.
+# 🩺 Health Records iOS App
+
+This iOS app helps users securely store, view, and manage their personal health records.
 
 ---
 
-## ✅ 2. **Preview Mermaid in GitHub Before Pushing**
+## 📁 Folder Architecture
 
-To preview Mermaid locally, use one of these:
+```mermaid
+graph TD
+  A[HealthRecordsApp]
+  
+  A --> B[AppDelegate / SceneDelegate]
+  A --> C[Resources]
+  A --> D[Modules]
+  A --> E[Networking]
+  A --> F[Models]
+  A --> G[Views]
+  A --> H[ViewModels]
+  A --> I[Utils]
+  A --> J[Services]
+  A --> K[Assets.xcassets]
+  A --> L[Extensions]
 
-### Option A: [VS Code + Markdown Preview Mermaid Support Extension](https://marketplace.visualstudio.com/items?itemName=vstirbu.vscode-mermaid-preview)
-- Install VS Code
-- Add the Mermaid Preview extension
-- Open your `.md` file → `Ctrl+Shift+V` to preview
+  D --> D1[Authentication]
+  D --> D2[HealthDashboard]
+  D --> D3[Appointments]
+  D --> D4[MedicalHistory]
+  D --> D5[Settings]
 
-### Option B: [Obsidian](https://obsidian.md/)
-- If you're documenting heavily, Obsidian renders Mermaid in Markdown beautifully.
-
----
-
-## ✅ 3. **Render Mermaid in GitHub Wikis, Issues, and PRs**
-
-Just paste the Mermaid block inside triple backticks in:
-
-- ✅ **GitHub Issues**
-- ✅ **Pull Requests**
-- ✅ **Wikis**
-- ✅ **Discussions**
-
-⚠️ GitHub Pages (static sites) don’t render Mermaid natively unless you add a rendering library (e.g. via Docusaurus or Jekyll plugin).
-
----
-
-## 🔒 Gotchas
-| Limitation | Workaround |
-|------------|------------|
-| No support in raw `.mermaid` files | Use `.md` instead |
-| Complex diagrams may break on GitHub | Test locally with VS Code or [mermaid.live](https://mermaid.live) |
-| No diagram styling in GitHub | Mermaid styling is limited, use comments or separate styling via HTML/CSS if needed |
-
----
-
-Let me know if you want a **GitHub project template** with Mermaid examples pre-added (`README.md`, diagrams folder, etc.).
+  G --> G1[UIKit / SwiftUI Screens]
+  H --> H1[ViewModel per Screen]
